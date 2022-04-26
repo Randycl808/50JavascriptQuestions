@@ -311,18 +311,119 @@
   //They are all hoisted to the top of their scope. But while var variables are initialized with undefined, let and const variables are not initialized.
   //While var and let can be declared without being initialized, const must be initialized during declaration.
 
-  
+
 //Question: 20) How would you check if an array contains a specific item?
 
+  //The includes method is part of ES6 that can also be used to determine whether an array contains a specified item. 
+  //This method returns true if the element exists in the array, and false if not. 
+  //The includes() method is perfect for finding whether the element exists or not as a simple boolean value.
+
+  const symbol = Symbol('🌟');
+
+  const types = ['Apple', 150, null, undefined, true, 29n, symbol];
+
+  // strings
+  types.includes('Apple');    // true
+
+  // numbers
+  types.includes(150);        // true
+
+  // null
+  types.includes(null);       // true
+
+  // undefined
+  types.includes(undefined);  // true
+
+  // boolean
+  types.includes(true);       // true
+
+  // BigInt
+  types.includes(29n);        // true
+
+  // Symbol
+  types.includes(symbol);     // true
 
 //Question: 21) How would you check the length of an array?
 
+  //.length is a property of arrays in JavaScript that returns or sets the number of elements in a given array.
+
+  const listA = [1,2,3];
+  const listB = new Array(6);
+
+  console.log(listA.length);
+  // 3
+
+  console.log(listB.length);
+  // 6
 
 //Question: 22) What is the difference between a for loop and a while loop?
+
+  //For Loops
+  //Probably the most common type of loop, for loops, are great for when you already know how many times you want to loop through something.
+  // When using a for loop, we typically use a counter that will either increment or decrement until a condition is met. 
+  //Once the condition is met, the loop will stop. 
+  //To get a better understanding of what I'm talking about here’s a basic example of a for loop in action:
+
+  for (let i=0; i < 7; i++) {
+    console.log('Hello World');
+  }
+
+  //If you predicted that Hello World would be printed to the console 7 times then you are correct! 
+  //But how does this loop work? Well, in this example, we start with our initial statement (let i=0), 
+  //the loop then looks at the condition (i < 7) and the increment expression (i++) and the loop runs accordingly. 
+  //As long as i is less than 7, i will increment by 1 until it is no longer less than 7.
+  //Each time the loop runs, the console.log(‘Hello World’); will be executed. 
+  //Since the loop has to increment 7 times until the stopping condition is met, “Hello World” is printed to the console 7 times.
+  // We can also make our starting condition a larger number than 0 and have the loop decrement until the condition is met.
+
+
+  //While Loops
+  //A while loop is slightly different than a for loop for the fact that it’s good to use when we don’t know how many times we want to loop through a problem beforehand. 
+  //This is the key difference between using a for loop or a while loop. 
+  //A while loop is a little easier to explain than a for loop because 
+  //a while loop will simply run the same code over and over until the condition becomes false. 
+  //Let’s take a look at a simple example of a while loop!
+
+  let x = 0;
+  let y = 0;
+
+  while (x < 4) {
+    x++;
+    y += x;
+}
+
+  //As you can see, setting up a while loop is pretty simple. We start by declaring the while loop, setting a condition, and then the code that we want to execute which goes inside. 
+  //In the example above, as long as x is less than 4, the while loop will continue to execute. 
+  //The code that is being executed increases the value of x with each iteration as well as adds the value of x to y. 
+  //If you haven’t figured it out yet, this while loop will set y’s value to 10. y starts out as 0 then 1, 3, 6, 10 because x’s value gets added onto y with each iteration.
+
+  //Another While loop:
+  let i = 0;
+  do {
+    i += 1;
+    console.log(i);
+  } while (i < 5);
+
+  //As you can see, i starts at 0 and is incremented by 1 with each passing iteration. 
+  //The new value of i is then also logged to the console. In this example, the console will print 1 2 3 4 5.
+
+  //Infinite Loops
+  //Something that you need to be careful of when dealing with loops is creating one where a stopping condition is never met. 
+  //This loop will run forever (infinitely) and can have negative consequences on your computer such as having it freeze and become unresponsive. 
+  //Let’s take a look at a simple infinite while loop so you know how to avoid running into them.
+
+  let i = 0;
+    while (i < 5) {
+    console.log(i);
+  }
+
+  //This loop will run forever because the condition i < 5 will always be true 
+  //and the console.log statement will execute an infinite amount of times.
 
 
 //Question: 23) When would you use "&&" and when would you use "||"?
 
+  
 
 //Question: 24) What is a ternary operator?
 
