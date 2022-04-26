@@ -249,13 +249,69 @@
   //Addition function
   let sum = add(10, 20);
     console.log('Sum:', sum);
-    
+
 //Question: 18) How would you check if an object has a specific property?
 
 
 //Question: 19) What is the difference between var, const, and let?
 
+  //var is function scoped when it is declared within a function. 
+  //This means that it is available and can be accessed only within that function.
+  //To understand further, look at the example below.
+  var greeter = "hey hi";
+    
+  function newFunction() {
+    var hello = "hello";
+  }
 
+  //Here, greeter is globally scoped because it exists outside a function while hello is function scoped. 
+  //So we cannot access the variable hello outside of a function. So if we do this:
+  var tester = "hey hi";
+    
+  function newFunction() {
+    var hello = "hello";
+  }
+    console.log(hello); // error: hello is not defined
+
+  //We'll get an error which is as a result of hello not being available outside the function.
+
+
+  //let is block scoped
+  //A block is a chunk of code bounded by {}. A block lives in curly braces. Anything within curly braces is a block.
+  //So a variable declared in a block with let  is only available for use within that block. Let me explain this with an example:
+  let greeting = "say Hi";
+  let times = 4;
+
+  if (times > 3) {
+    let hello = "say Hello instead";
+    console.log(hello);// "say Hello instead"
+   }
+    console.log(hello) // hello is not defined
+
+  //We see that using hello outside its block (the curly braces where it was defined) returns an error. 
+  //This is because let variables are block scoped.
+
+
+  //const variables declared with the const maintain constant values. const declarations share some similarities with let declarations.
+  //const declarations are block scoped
+  //Like let declarations, const declarations can only be accessed within the block they were declared.
+  //Let me explain this with an example:
+
+  const greeting = "say Hi";
+  greeting = "say Hello instead";// error: Assignment to constant variable.
+
+  //or
+
+  const greeting = "say Hi";
+  const greeting = "say Hello instead";// error: Identifier 'greeting' has already been declared
+
+  //So just in case you missed the differences, here they are:
+  //var declarations are globally scoped or function scoped while let and const are block scoped.
+  //var variables can be updated and re-declared within its scope; let variables can be updated but not re-declared; const variables can neither be updated nor re-declared.
+  //They are all hoisted to the top of their scope. But while var variables are initialized with undefined, let and const variables are not initialized.
+  //While var and let can be declared without being initialized, const must be initialized during declaration.
+
+  
 //Question: 20) How would you check if an array contains a specific item?
 
 
@@ -272,3 +328,5 @@
 
 
 //Question: 25) What is the difference between Java and Javascript?
+
+  //What is the difference between Car and Carpet?
